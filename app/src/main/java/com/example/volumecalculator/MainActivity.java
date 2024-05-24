@@ -68,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
                     Intent i = new Intent(getApplicationContext(), CubeActivity.class);
                     startActivity(i);
                 }
+
+                if (shape.equals("Prism")) {
+                    Intent i = new Intent(getApplicationContext(), PrismActivity.class);
+                    startActivity(i);
+                }
             }
         });
 
