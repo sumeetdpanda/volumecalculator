@@ -1,6 +1,9 @@
 package com.example.volumecalculator;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import androidx.activity.EdgeToEdge;
@@ -45,6 +48,23 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ShapeAdapter(getApplicationContext(), shapesArrayList);
 
         gridView.setAdapter(adapter);
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String shape = adapter.getItem(position).getShapeName();
+
+                if (shape.equals("Sphere")) {
+                    Intent i = new Intent(getApplicationContext(), SphereActivity.class);
+                    startActivity(i);
+                }
+
+                if (shape.equals("Cylinder")) {
+                    Intent i = new Intent(getApplicationContext(), CylinderActivity.class);
+                    startActivity(i);
+                }
+            }
+        });
 
     }
 }
