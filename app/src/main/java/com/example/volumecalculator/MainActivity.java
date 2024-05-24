@@ -63,6 +63,11 @@ public class MainActivity extends AppCompatActivity {
                     Intent i = new Intent(getApplicationContext(), CylinderActivity.class);
                     startActivity(i);
                 }
+
+                if (shape.equals("Cube")) {
+                    Intent i = new Intent(getApplicationContext(), CubeActivity.class);
+                    startActivity(i);
+                }
             }
         });
 
